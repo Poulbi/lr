@@ -3,6 +3,7 @@
 
 #include <stdint.h>
 #include <stddef.h>
+#include <sys/types.h>
 
 #define internal static 
 #define local_persist static 
@@ -40,5 +41,8 @@ typedef double f64;
 #define U32Min 0
 #define U32Max ((u32)-1)
 #define U64Max ((u64)-1)
+
+#define false 0
+#define true  1
 
 #endif //LR_TYPES_H
