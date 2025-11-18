@@ -3,7 +3,12 @@
 
 #include <stdint.h>
 #include <stddef.h>
-#include <sys/types.h>
+#if OS_LINUX
+# include <sys/types.h>
+#elif OS_WINDOWS
+# include <Windows.h>
+# define ssize_t SSIZE_T
+#endif
 
 #define internal static 
 #define local_persist static 
