@@ -3,7 +3,9 @@
 
 #include <stdint.h>
 #include <stddef.h>
-#include <sys/types.h>
+#if OS_LINUX
+# include <sys/types.h>
+#endif
 
 #define internal static 
 #define local_persist static 
