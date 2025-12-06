@@ -50,4 +50,6 @@ _Pragma("clang diagnostic ignored \"-Weverything\"")
 #define Minimum(A, B) (((A) < (B)) ? (A) : (B))
 #define Maximum(A, B) (((A) > (B)) ? (A) : (B))
 
+#define EachIndex(Index, Count) s64 Index = 0; Index < (Count); Index += 1
+
 #endif // LR_MACROS_H
