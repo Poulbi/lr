@@ -52,4 +52,12 @@ _Pragma("clang diagnostic ignored \"-Weverything\"")
 
 #define EachIndex(Index, Count) s64 Index = 0; Index < (Count); Index += 1
 
+#if OS_WINDOWS
+# include <windows.h>
+# define RADDBG_MARKUP_IMPLEMENTATION
+#else
+# define RADDBG_MARKUP_STUBS
+#endif
+#include "raddbg_markup.h"
+
 #endif // LR_MACROS_H
