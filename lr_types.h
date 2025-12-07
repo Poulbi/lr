@@ -51,11 +51,20 @@ typedef double f64;
 #define false 0
 #define true  1
 
+typedef struct range_s64 range_s64;
 struct range_s64
 {
     s64 Min;
     s64 Max;
 };
-typedef struct range_s64 range_s64;
+
+typedef struct str8 str8;
+struct str8
+{
+    umm Size;
+    u8 *Data;
+};
+raddbg_type_view(str8, no_addr(array((char *)Data, Size)));
+#define S8Lit(String) (str8){.Data = (u8 *)(String), .Size = (sizeof((String)) - 1)}
 
 #endif //LR_TYPES_H
