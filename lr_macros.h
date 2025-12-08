@@ -44,6 +44,7 @@ _Pragma("clang diagnostic ignored \"-Weverything\"")
 #define ArrayCount(Array) (sizeof(Array) / sizeof((Array)[0]))
 
 #define Assert(Expression) if(!(Expression)) { __asm__ volatile("int3"); }
+#define DebugBreak     do { Assert(0); } while(0)
 #define DebugBreakOnce do { local_persist b32 X = false; Assert(X); X = true; } while(0)
 #define NullExpression { int X = 0; }
 
